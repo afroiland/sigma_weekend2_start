@@ -1,0 +1,46 @@
+
+#navButtons {
+  position: fixed;
+  top: 300px;
+}
+
+#indices {
+  display: inline-block;
+  position: fixed;
+  top: 250px;
+}
+
+
+
+td {
+  border: 1px solid black;
+  height: 25px;
+  width: 25px;
+}
+/*
+#div1 {
+  position: fixed;
+  top: 250px;
+  margin: 5px;
+  border: 2px solid black;
+  height: 25px;
+  width: 25px;
+}
+
+#div1 {
+  position: fixed;
+  top: 250px;
+  margin: 5px;
+  border: 2px solid black;
+  height: 25px;
+  width: 25px;
+}
+
+
+
+
+
+#div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10,
+#div11, #div12, #div13, #div14, #div15, #div16, #div17, #div18, #div19,
+
+*/
