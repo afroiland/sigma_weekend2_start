@@ -1,6 +1,6 @@
 
 var studentIndex = 0;
-var speed = 2000;
+var speed = 10000;
 
 $(document).ready(function(){
     $.ajax({
@@ -19,6 +19,7 @@ $(document).ready(function(){
       $el.append('<h3>' + index.sigmanauts[studentIndex].name + '</h3>');
       $el.append('<h3>' + index.sigmanauts[studentIndex].git_username + '</h3>');
       $el.append('<h3>' + index.sigmanauts[studentIndex].shoutout + '</h3>');
+      $("h3").fadeIn("slow");
       $("#td"+studentIndex).css('background', '#aaa');
     }
 
@@ -45,11 +46,20 @@ $(document).ready(function(){
         setInterval(automate, speed, dataParam);
       });
       $("#faster").on('click', function(event) {
-        speed -= 500;
-        if (speed < 500){
-          speed = 500;
-        }
-        setInterval(automate, speed, dataParam);
+        alert("Button functionality forthcoming. Thank you for your patience.");
+        // speed -= 500;
+        // if (speed < 500){
+        //   speed = 500;
+        // }
+        // setInterval(automate, speed, dataParam);
+      });
+      $("#slower").on('click', function(event) {
+        alert("Button functionality forthcoming. Thank you for your patience.");
+        // speed += 500;
+        // if (speed > 10000){
+        //   speed = 10000;
+        // }
+        // setInterval(automate, speed, dataParam);
       });
     }
 
@@ -60,8 +70,8 @@ $(document).ready(function(){
         studentIndex = 0;
       }
       $("h3").fadeOut("slow");
-      setTimeout(clear, 500);
-      setTimeout(displayInfo, 501, test);
+      setTimeout(clear, 490);
+      setTimeout(displayInfo, 495, test);
     }
 
     function clear(){

@@ -15,6 +15,10 @@ td {
   height: 25px;
   width: 25px;
 }
+
+h3 {
+  display: none;
+}
 /*
 #div1 {
   position: fixed;
