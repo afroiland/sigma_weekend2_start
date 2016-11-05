@@ -1,5 +1,6 @@
 
 var studentIndex = 0;
+var speed = 2000;
 
 $(document).ready(function(){
     $.ajax({
@@ -9,8 +10,6 @@ $(document).ready(function(){
 //        console.log(data);
         displayInfo(data);
         buttonFunctions(data);
-//        setInterval(automate, 2000, data);
-//        automate(data);
         }
       });
 
@@ -30,8 +29,8 @@ $(document).ready(function(){
           studentIndex = 0;
         }
         $("h3").fadeOut("slow");
-        setTimeout(clear, 900);
-        setTimeout(displayInfo, 901, dataParam);
+        setTimeout(clear, 500);
+        setTimeout(displayInfo, 501, dataParam);
       });
       $("#previous").on('click', function(event) {
         studentIndex--;
@@ -42,6 +41,16 @@ $(document).ready(function(){
         $("td").css('background', 'none');
         displayInfo(dataParam);
       });
+      $("#automate").on('click', function(event) {
+        setInterval(automate, speed, dataParam);
+      });
+      $("#faster").on('click', function(event) {
+        speed -= 500;
+        if (speed < 500){
+          speed = 500;
+        }
+        setInterval(automate, speed, dataParam);
+      });
     }
 
     function automate(test){
@@ -50,9 +59,9 @@ $(document).ready(function(){
       if(studentIndex === 19){
         studentIndex = 0;
       }
-      $("#container").empty();
-      $("td").css('background', 'none');
-      displayInfo(test);
+      $("h3").fadeOut("slow");
+      setTimeout(clear, 500);
+      setTimeout(displayInfo, 501, test);
     }
 
     function clear(){
