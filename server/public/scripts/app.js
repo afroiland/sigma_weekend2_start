@@ -6,10 +6,11 @@ $(document).ready(function(){
       type: "GET",
       url: "/data",
       success: function(data){
-        console.log(data);
+//        console.log(data);
         displayInfo(data);
         buttonFunctions(data);
-//        setInterval(automate(data), 2000);
+//        setInterval(automate, 2000, data);
+//        automate(data);
         }
       });
 
@@ -22,15 +23,15 @@ $(document).ready(function(){
       $("#td"+studentIndex).css('background', '#aaa');
     }
 
-    function buttonFunctions(test){
+    function buttonFunctions(dataParam){
       $("#next").on('click', function(event) {
         studentIndex++;
         if(studentIndex === 19){
           studentIndex = 0;
         }
-        $("#container").empty();
-        $("td").css('background', 'none');
-        displayInfo(test);
+        $("h3").fadeOut("slow");
+        setTimeout(clear, 900);
+        setTimeout(displayInfo, 901, dataParam);
       });
       $("#previous").on('click', function(event) {
         studentIndex--;
@@ -39,10 +40,12 @@ $(document).ready(function(){
         }
         $("#container").empty();
         $("td").css('background', 'none');
-        displayInfo(test);
+        displayInfo(dataParam);
       });
     }
+
     function automate(test){
+      console.log(test);
       studentIndex++;
       if(studentIndex === 19){
         studentIndex = 0;
@@ -50,5 +53,10 @@ $(document).ready(function(){
       $("#container").empty();
       $("td").css('background', 'none');
       displayInfo(test);
+    }
+
+    function clear(){
+      $("#container").empty();
+      $("td").css('background', 'none');
     }
 });
