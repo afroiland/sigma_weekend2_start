@@ -20,7 +20,7 @@ $(document).ready(function(){
       $el.append('<h3>' + index.sigmanauts[studentIndex].git_username + '</h3>');
       $el.append('<h3>' + index.sigmanauts[studentIndex].shoutout + '</h3>');
       $("h3").fadeIn("slow");
-      $("#td"+studentIndex).css('background', '#aaa');
+      $("#td"+studentIndex).css('background', '#20B2AA');
     }
 
     function buttonFunctions(dataParam){
