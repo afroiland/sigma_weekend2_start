@@ -1,6 +1,6 @@
 
 var studentIndex = 0;
-var speed = 10000;
+var speed = 1000;
 
 $(document).ready(function(){
     $.ajax({
