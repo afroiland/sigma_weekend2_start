@@ -1,6 +1,6 @@
 
 var studentIndex = 0;
-var speed = 1000;
+var speed = 10000;
 
 $(document).ready(function(){
     $.ajax({
@@ -26,7 +26,7 @@ $(document).ready(function(){
     function buttonFunctions(dataParam){
       $("#next").on('click', function(event) {
         studentIndex++;
-        if(studentIndex === 19){
+        if(studentIndex === dataParam.sigmanauts.length){
           studentIndex = 0;
         }
         $("h3").fadeOut("slow");
@@ -36,7 +36,7 @@ $(document).ready(function(){
       $("#previous").on('click', function(event) {
         studentIndex--;
         if(studentIndex === -1){
-          studentIndex = 18;
+          studentIndex = dataParam.sigmanauts.length -1;
         }
         $("#container").empty();
         $("td").css('background', 'none');
@@ -66,7 +66,7 @@ $(document).ready(function(){
     function automate(test){
       console.log(test);
       studentIndex++;
-      if(studentIndex === 19){
+      if(studentIndex === test.sigmanauts.length){
         studentIndex = 0;
       }
       $("h3").fadeOut("slow");
